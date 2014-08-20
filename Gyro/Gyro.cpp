@@ -35,8 +35,6 @@
 #define rad2degree 57.3              // Radian to degree conversion
 #define Filter_gain 0.95             // e.g.  angle = angle_gyro*Filter_gain + angle_accel*(1-Filter_gain)
 
-int calibrationLEDPin;
-
 int temp=0, accel_x=0, accel_y=0, accel_z=0, gyro_x=0, gyro_y=0, gyro_z=0; // Raw values varaibles
 int accel_x_OC=0, accel_y_OC=0, accel_z_OC=0, gyro_x_OC=0 ,gyro_y_OC=0, gyro_z_OC=0; // offset variables
 float temp_scalled,accel_x_scalled,accel_y_scalled,accel_z_scalled,gyro_x_scalled,gyro_y_scalled,gyro_z_scalled; //Scalled Data varaibles
@@ -261,21 +259,6 @@ void Gyro::offsetCal(){
 	if(calibrationLEDPin != 0){
 		digitalWrite(calibrationLEDPin, HIGH);
 	}
-
-}
-
-void Gyro::setCalibrationLightPin(int LEDPin){
-
-	calibrationLEDPin = LEDPin;
-	pinMode(LEDPin, OUTPUT);
-
-}
-
-void Gyro::setThresholds(int x, int y, int z){
-
-	x_threshold = x;
-	y_threshold = y;
-	z_threshold = z;
 
 }
 

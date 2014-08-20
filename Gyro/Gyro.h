@@ -17,15 +17,11 @@ class Gyro
 
     float angle_x_gyro, angle_y_gyro, angle_z_gyro, angle_x_accel, angle_y_accel, angle_z_accel, angle_x, angle_y, angle_z;
 
-    int x_threshold, y_threshold, z_threshold;
-
 	void readData();
 	void resetWake();
 	void setDLPF(int BW);
 	void setGains(int gyro,int accel);
 	void offsetCal();
-	void setCalibrationLightPin(int LEDPin);
-	void setThresholds(int x, int y, int z);
 	void calculateValues();
 
 };
